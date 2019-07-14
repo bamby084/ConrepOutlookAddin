@@ -1,0 +1,8 @@
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\CheckBoxComboBox.dll
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\ConrepOutlookAddin.dll
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\ConrepOutlookAddin.dll.manifest
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\ConrepOutlookAddin.vsto
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\log4net.dll
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin\bin\Debug\Newtonsoft.Json.dll

@@ -1,0 +1,7 @@
+﻿{
+  "loginUrl": "",
+  "userName": "",
+  "password": "",
+  "logIncomingEmails": false,
+  "logOutgoingEmails":  true 
+}

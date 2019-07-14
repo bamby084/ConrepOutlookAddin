@@ -1,0 +1,6 @@
+obj\Debug\Product.wixobj
+obj\Debug\ConrepOutlookAddin.Setup.wixproj.BindContentsFileListnull.txt
+obj\Debug\ConrepOutlookAddin.Setup.wixproj.BindOutputsFileListnull.txt
+obj\Debug\ConrepOutlookAddin.Setup.wixproj.BindBuiltOutputsFileListnull.txt
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin.Setup\bin\Debug\ConrepOutlookAddin.msi
+D:\Projects\Upwork\ConrepOutlookAddin\ConrepOutlookAddin.Setup\bin\Debug\ConrepOutlookAddin.wixpdb

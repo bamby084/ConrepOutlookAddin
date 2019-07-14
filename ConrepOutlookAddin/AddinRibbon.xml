@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab idMso="TabAddIns" label="Conrep">
+        <group id="CommonGroup" label="Common">
+          <splitButton id="BulkImportSplitButton" size="large">
+            <button id="BulkImportButton" label="Bulk Import" getImage="GetImage"/>
+            <menu>
+              <button label="Bulk Import headers only" id="BulkImportHeaderButton"
+                      onAction="BulkImportHeaderOnly"/>
+              <button label="Bulk Import headers, contents and attachments" id="BulkImportAllButton"
+                      onAction="BulkImport"/>
+            </menu>
+          </splitButton>
+          <button id="CalendarSyncButton" label="Calendar Sync"
+                  onAction="SyncCalendars"
+                  screentip="Calendar Sync" size="large" getImage="GetImage"
+                  supertip="Sync the calendar from server to Outlook."/>
+          <toggleButton id="ShowHideConrepPaneButton" label="Conrep Pane"
+                  screentip="Show/Hide Conrep Pane" size="large" getImage="GetImage"
+                  onAction="OnConrepPaneToggleButtonClick" getPressed="ConrepPaneGetPressed"
+                  supertip="Show/Hide Conrep task pane."/>
+          <button id="SettingsButton" label="Settings..."
+                  screentip="Settings" size="large" getImage="GetImage"
+                  onAction="ShowSettingsPage"
+                  supertip="Open settings page."/>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
+

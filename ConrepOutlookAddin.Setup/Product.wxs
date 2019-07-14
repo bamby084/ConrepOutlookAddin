@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="BF354A4D-FC3A-468A-8E2D-39F2082023F1"
+           Name="Conrep Outlook Addin" Language="1033" Version="1.0.0.0"
+           Manufacturer="Conrep Inc" UpgradeCode="984b828e-9ba4-4c05-9074-92444bc3b934">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine"/>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="ConrepOutlookAddin.cab" EmbedCab="yes"/>
+
+    <Feature Id="ProductFeature" Title="ConrepOutlookAddin.Setup" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="Registry_FriendlyName"/>
+      <ComponentRef Id="Registry_Description"/>
+      <ComponentRef Id="Registry_Manifest"/>
+      <ComponentRef Id="Registry_LoadBehavior"/>
+      <ComponentRef Id="Registry_RootFolder"/>
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Conrep Outlook Addin" />
+        <Component Id="Registry_FriendlyName">
+          <RegistryValue Id="RegKey_FriendlyName" Root="HKCU"
+                         Key="Software\Microsoft\Office\Outlook\AddIns\ConrepOutlookAddin"
+                         Name="FriendlyName"
+                         Value="Conrep Outlook Addin"
+                         Type="string" KeyPath="yes" />
+        </Component>
+        
+        <Component Id="Registry_Description">
+          <RegistryValue Id="RegKey_Description" Root="HKCU"
+                         Key="Software\Microsoft\Office\Outlook\AddIns\ConrepOutlookAddin"
+                         Name="Description"
+                         Value="Add in to import emails to server"
+                         Type="string" KeyPath="yes" />
+        </Component>
+        
+        <Component Id="Registry_Manifest">
+          <RegistryValue Id="RegKey_Manifest" Root="HKCU"
+                         Key="Software\Microsoft\Office\Outlook\AddIns\ConrepOutlookAddin"
+                         Name="Manifest" Value="[INSTALLFOLDER]ConrepOutlookAddin.vsto|vstolocal"
+                         Type="string" KeyPath="yes" />
+        </Component>
+        
+        <Component Id="Registry_LoadBehavior">
+          <RegistryValue Id="RegKey_LoadBehavior" Root="HKCU"
+                         Key="Software\Microsoft\Office\Outlook\AddIns\ConrepOutlookAddin"
+                         Name="LoadBehavior" Value="3"
+                         Type="integer" KeyPath="yes" />
+        </Component>
+        
+        <Component Id="Registry_RootFolder">
+          <RegistryValue Id="RegKey_RootFolder" Root="HKCU"
+                         Key="Software\Microsoft\Office\Outlook\AddIns\ConrepOutlookAddin"
+                         Name="RootFolder" Value=""
+                         Type="string" KeyPath="yes" />
+        </Component>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="vsto">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="ConrepOutlookAddin.vsto"/>
+      </Component>
+      
+      <Component Id="manifest">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="ConrepOutlookAddin.dll.manifest"/>
+      </Component>
+
+      <Component Id="dll">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="ConrepOutlookAddin.dll"/>
+      </Component>
+
+      <Component Id="outlook_utilities">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="Microsoft.Office.Tools.Outlook.v4.0.Utilities.dll"/>
+      </Component>
+      
+      <Component Id="outlook_common_utilities">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="Microsoft.Office.Tools.Common.v4.0.Utilities.dll"/>
+      </Component>
+
+      <Component Id="Newtonsoft.Json">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="Newtonsoft.Json.dll"/>
+      </Component>
+    
+      <Component Id="CheckedCombobox">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="CheckBoxComboBox.dll"/>
+      </Component>
+    
+      <Component Id="log4net">
+        <File Source="$(var.ConrepOutlookAddin.TargetDir)" KeyPath="yes" Name="log4net.dll"/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
